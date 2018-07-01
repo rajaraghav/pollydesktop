@@ -36,7 +36,15 @@ import java.util.Map;
 public class Main extends Application {
         HashMap<String,String> map = new LinkedHashMap<>();
         ComboBox<String> dropDownVoices = initCombo();
+        ListView<HBox> listView = new ListView<>();
         TextArea textBox;
+
+
+        void refreshScene() throws InterruptedException, IOException {
+            Thread.sleep(5000);
+            System.out.println("Awake now fetch");
+            loadData();
+        }
     void playSound(String uri)
         {
             System.out.println("clicked"+uri);
@@ -48,8 +56,6 @@ public class Main extends Application {
                                    HashMap<String, String> postDataParams) {
 
         URL url;
-
-        String response = "";
         try {
             url = new URL(requestURL);
             JSONObject data = getPostDataString(postDataParams);
@@ -142,6 +148,13 @@ public class Main extends Application {
                 tem.put("text",text);
                 System.out.println(voice+" "+text);
                 performPostCall("https://opcb6awum8.execute-api.us-east-1.amazonaws.com/prod",tem);
+                try {
+                    refreshScene();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
 
         };
@@ -203,15 +216,9 @@ public class Main extends Application {
         }
         return cb;
     }
-    @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void loadData() throws IOException {
         JSONArray arr = new JSONArray(getData());
-        BorderPane borderPane = new BorderPane();
-        VBox vBox = new VBox(20);
-        borderPane.setCenter(vBox);
-        primaryStage.setTitle("Aarus");
-        primaryStage.setScene(new Scene(borderPane, 800, 640));
-        ListView<HBox> listView = new ListView<>();
+        listView.getItems().clear();
         for(int i=0;i<arr.length();i++)
         {
             final JSONObject jsonObject= arr.getJSONObject(i);
@@ -219,14 +226,23 @@ public class Main extends Application {
             Node voice = new Text(jsonObject.getString("voice"));
             Node text = new Text(jsonObject.getString("text"));
             Node btn = new Button("Play");
-
-
             btn.addEventHandler(MouseEvent.MOUSE_CLICKED, createSolButtonHandler(jsonObject.getString("url")));
             hb.getChildren().add(voice);
             hb.getChildren().add(text);
             hb.getChildren().add(btn);
             listView.getItems().add(hb);
         }
+        listView.refresh();
+    }
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+
+        BorderPane borderPane = new BorderPane();
+        VBox vBox = new VBox(20);
+        borderPane.setCenter(vBox);
+        primaryStage.setTitle("Aarus");
+        primaryStage.setScene(new Scene(borderPane, 800, 640));
+        loadData();
         vBox.getChildren().add(listView);
         HBox postBox = new HBox();
         textBox = new TextArea("Enter text");
@@ -244,6 +260,5 @@ public class Main extends Application {
 
     public static void main(String[] args) throws IOException {
         launch(args);
-
     }
 }
