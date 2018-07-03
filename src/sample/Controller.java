@@ -230,6 +230,7 @@ public class Controller {
     }
     public void initialize() throws IOException {
         VBox vBox = new VBox(20);
+        vBox.getStyleClass().add("vbox");
         border.setCenter(vBox);
         loadData();
         vBox.getChildren().add(listView);

@@ -47,9 +47,10 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Alexa Polly");
-        primaryStage.setScene(new Scene(root, 800, 640));
+        Scene scene  = new Scene(root, 800, 640);
+        primaryStage.setScene(scene);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         primaryStage.show();
-
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {

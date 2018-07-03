@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/sample/style.css" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/alexadesktop/sample/Controller.class" afterPath="$PROJECT_DIR$/out/production/alexadesktop/sample/Controller.class" />
       <change beforePath="$PROJECT_DIR$/out/production/alexadesktop/sample/Main$1.class" afterPath="$PROJECT_DIR$/out/production/alexadesktop/sample/Main$1.class" />
       <change beforePath="$PROJECT_DIR$/out/production/alexadesktop/sample/Main$2.class" afterPath="$PROJECT_DIR$/out/production/alexadesktop/sample/Main$2.class" />
       <change beforePath="$PROJECT_DIR$/out/production/alexadesktop/sample/Main.class" afterPath="$PROJECT_DIR$/out/production/alexadesktop/sample/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/alexadesktop/sample/sample.fxml" afterPath="$PROJECT_DIR$/out/production/alexadesktop/sample/sample.fxml" />
       <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" afterPath="$PROJECT_DIR$/src/sample/Controller.java" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" afterPath="$PROJECT_DIR$/src/sample/sample.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/sample/style.css" afterPath="$PROJECT_DIR$/src/sample/style.css" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,11 +67,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="51" column="64" lean-forward="false" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,12 +79,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-241">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="164">
+              <caret line="232" column="41" lean-forward="false" selection-start-line="232" selection-start-column="41" selection-end-line="232" selection-end-column="41" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#4224#4225#0" expanded="true" />
                 <element signature="e#4270#4271#0" expanded="true" />
                 <element signature="method#initMap#0;class#Controller#0" expanded="false" />
@@ -111,8 +110,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -150,9 +149,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/fil.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Controller.java" />
-        <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/Main.java" />
+        <option value="$PROJECT_DIR$/src/sample/style.css" />
+        <option value="$PROJECT_DIR$/src/sample/Controller.java" />
       </list>
     </option>
   </component>
@@ -382,7 +382,7 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1530267327227" duration="13918000" />
       <workItem from="1530443074188" duration="2571000" />
-      <workItem from="1530588594686" duration="2009000" />
+      <workItem from="1530588594686" duration="3345000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1530269487352</created>
@@ -409,7 +409,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19800000" />
+    <option name="totallyTimeSpent" value="21136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
@@ -489,6 +489,7 @@
         <state relative-caret-position="60">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#4224#4225#0" expanded="true" />
             <element signature="e#4270#4271#0" expanded="true" />
             <element signature="method#initMap#0;class#Controller#0" expanded="false" />
@@ -522,6 +523,7 @@
         <state relative-caret-position="60">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#4224#4225#0" expanded="true" />
             <element signature="e#4270#4271#0" expanded="true" />
             <element signature="method#initMap#0;class#Controller#0" expanded="false" />
@@ -566,6 +568,7 @@
         <state relative-caret-position="60">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#4224#4225#0" expanded="true" />
             <element signature="e#4270#4271#0" expanded="true" />
             <element signature="method#initMap#0;class#Controller#0" expanded="false" />
@@ -591,18 +594,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-241">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#4224#4225#0" expanded="true" />
-            <element signature="e#4270#4271#0" expanded="true" />
-            <element signature="method#initMap#0;class#Controller#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -616,18 +607,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="51" column="64" lean-forward="false" selection-start-line="51" selection-start-column="64" selection-end-line="51" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="232" column="41" lean-forward="false" selection-start-line="232" selection-start-column="41" selection-end-line="232" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4224#4225#0" expanded="true" />
+            <element signature="e#4270#4271#0" expanded="true" />
+            <element signature="method#initMap#0;class#Controller#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -643,7 +647,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
