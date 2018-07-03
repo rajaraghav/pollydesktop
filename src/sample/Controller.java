@@ -1,8 +1,10 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -11,10 +13,12 @@ import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -128,7 +132,18 @@ public class Controller {
         };
         return btnClickHandler;
     }
+    public EventHandler<Event> quitButtonHandler()
+    {
+        EventHandler btnClickHandler = new EventHandler<Event>(){
 
+            @Override
+            public void handle(Event event) {
+                Platform.exit();
+            }
+
+        };
+        return btnClickHandler;
+    }
     public EventHandler<Event> postButtonHandler()
     {
         EventHandler btnClickHandler = new EventHandler<Event>(){
@@ -208,7 +223,16 @@ public class Controller {
         {
             cb.getItems().add(en.getKey());
         }
+        cb.setPromptText("Select Voice");
         return cb;
+    }
+    String clipText(String s)
+    {
+        if(s.length()>40)
+        {
+            s = s.substring(0,40)+"...";
+        }
+        return "\""+s+"\"";
     }
     public void loadData() throws IOException {
         JSONArray arr = new JSONArray(getData());
@@ -217,13 +241,20 @@ public class Controller {
         {
             final JSONObject jsonObject= arr.getJSONObject(i);
             HBox hb = new HBox();
-            Node voice = new Text(jsonObject.getString("voice"));
-            Node text = new Text(jsonObject.getString("text"));
+            hb.setSpacing(150);
+            hb.setAlignment(Pos.CENTER);
+            Text voice = new Text(jsonObject.getString("voice"));
+            voice.getStyleClass().add("white_text");
+            voice.setTextAlignment(TextAlignment.LEFT);
+            Text text = new Text(clipText(jsonObject.getString("text")));
+            text.getStyleClass().add("white_text");
             Node btn = new Button("Play");
+            btn.getStyleClass().add("playButton");
             btn.addEventHandler(MouseEvent.MOUSE_CLICKED, createSolButtonHandler(jsonObject.getString("url")));
             hb.getChildren().add(voice);
             hb.getChildren().add(text);
             hb.getChildren().add(btn);
+
             listView.getItems().add(hb);
         }
         listView.refresh();
@@ -235,16 +266,28 @@ public class Controller {
         loadData();
         vBox.getChildren().add(listView);
         HBox postBox = new HBox();
-        textBox = new TextArea("Enter text");
+        textBox = new TextArea();
+        textBox.getStyleClass().add("textField");
+        textBox.setPromptText("Enter Text");
         initMap();
         dropDownVoices = initCombo();
         Node postButton = new Button("Say It");
+        VBox quitPostBox = new VBox(20);
+        postButton.getStyleClass().add("postButton");
+        Button quitButton = new Button("quit");
+        quitPostBox.getChildren().add(postButton);
+        quitPostBox.getChildren().add(quitButton);
         postBox.getChildren().add(dropDownVoices);
         postBox.getChildren().add(textBox);
-        postBox.getChildren().add(postButton);
+        postBox.getChildren().add(quitPostBox);
+        postBox.setSpacing(40);
+
         postButton.addEventHandler(MouseEvent.MOUSE_CLICKED,postButtonHandler());
+        quitButton.addEventHandler(MouseEvent.MOUSE_CLICKED,quitButtonHandler());
         vBox.getChildren().add(postBox);
         }
-    }
+
+
+}
 
 
