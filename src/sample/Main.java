@@ -2,40 +2,21 @@ package sample;
 
 import javafx.application.Application;
 
-import javafx.event.Event;
 import javafx.event.EventHandler;
 
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import sun.net.www.http.HttpClient;
+
 
 import java.io.*;
-
-import org.apache.http.*;
-
-import javax.net.ssl.HttpsURLConnection;
-import java.net.*;
-import java.net.ProtocolException;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 
 public class Main extends Application {
     private double xOffset = 0;

@@ -274,9 +274,13 @@ public class Controller {
         Node postButton = new Button("Say It");
         VBox quitPostBox = new VBox(20);
         postButton.getStyleClass().add("postButton");
-        Button quitButton = new Button("quit");
+        Button quitButton = new Button();
+        quitButton.getStyleClass().add("quit__button");
+        quitButton.setMinSize(148, 148);
+        quitButton.setMaxSize(148, 148);
         quitPostBox.getChildren().add(postButton);
         quitPostBox.getChildren().add(quitButton);
+        quitPostBox.setAlignment(Pos.CENTER);
         postBox.getChildren().add(dropDownVoices);
         postBox.getChildren().add(textBox);
         postBox.getChildren().add(quitPostBox);
