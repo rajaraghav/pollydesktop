@@ -11,12 +11,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 
 import java.io.*;
+
 
 public class Main extends Application {
     private double xOffset = 0;
@@ -25,9 +27,12 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+        loader.setController(new Controller());
+        Parent root = loader.load();
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Alexa Polly");
+//        primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("icon.png")));
         Scene scene  = new Scene(root, 800, 640);
         primaryStage.setScene(scene);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());

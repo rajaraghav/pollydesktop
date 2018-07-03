@@ -2,6 +2,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 
-<BorderPane fx:id="border" fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml/1">
+
+<BorderPane fx:id="border" xmlns:fx="http://javafx.com/fxml/1">
 
 </BorderPane>
